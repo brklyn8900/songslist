@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Songs</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <div class="nav navbar-nav">
+    <%= link_to('Home', home_path) %>
+    <%= link_to('About', about_path) %>
+    <%= link_to('Songs List', songs_path) %>
+  </div>
+
+  <% if flash[:notice] %>
+    <div class="">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+
+    <%= yield %>
+
+</body>
+</html>
